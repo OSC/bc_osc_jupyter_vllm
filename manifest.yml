@@ -1,10 +1,10 @@
 ---
-name: Jupyter + Ollama
+name: Jupyter + vLLM
 category: Interactive Apps
 subcategory: Servers
 role: batch_connect
 description: |
-  Launch a [Jupyter] server with [Python] on [Cardinal] with Ollama.
+  Launch a [Jupyter] server with [Python] on [Cardinal] with vLLM. 
 
   [Jupyter]: https://jupyter.org/
   [Python]: https://www.python.org/

@@ -3,6 +3,7 @@ cluster:
   - "cardinal"
 form:
   - auto_accounts
+  - vllm_model
   - mode
   - working_dir
   - bc_num_hours
@@ -18,6 +19,11 @@ attributes:
       - [
           '4.1.5', '4.1.5',
         ]
+  vllm_model:
+    widget: 'select'
+    options:
+      - [ 'TinyLlama_v1.1', 'TinyLlama/TinyLlama_v1.1' ] 
+      - [ 'Llama-3.2-3B', 'meta-llama/Llama-3.2-3B' ]
   mode:
     widget: "radio"
     value: "1"
@@ -48,7 +54,7 @@ attributes:
         wait time as there are no node requirements.
       - **any gpu** - (*96 cores*) Use a Cardinal node that has [NVIDIA NVIDIA H100
         GPUs](https://www.nvidia.com/en-us/data-center/h100/). Recommended for faster LLM processing.
-        Select 1 for the number of GPUs, as Ollama only supports running on a single GPU. 
+        Suggest to select 1 for the number of GPUs to start.
     options:
       - [
           "any",     "any",

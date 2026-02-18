@@ -15,8 +15,9 @@ cd "${NOTEBOOK_ROOT}"
 
 # Setup Jupyter environment
 module load project/ondemand app_jupyter/<%= context.jupyter_version %>
-module load ollama/0.13.1
-source ollama_start_helper 
+LMOD_EXACT_MATCH=no module load vllm
+VLLM_MODEL=<%= context.vllm_model %>
+source vllm_start_helper "$VLLM_MODEL"
 
 module list
 export JUPYTER_PATH="${PWD}/share/jupyter:${OSC_LLM_API_PATH}"
