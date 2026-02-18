@@ -1,10 +1,10 @@
-# Batch Connect - OSC Jupyter + Ollama
+# Batch Connect - OSC Jupyter + vLLM
 
-![GitHub Release](https://img.shields.io/github/release/osc/bc_osc_jupyter_ollama.svg)
+![GitHub Release](https://img.shields.io/github/release/osc/bc_osc_jupyter_vllm.svg)
 [![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 An interactive app designed for OSC OnDemand that launches a Jupyter
-server and Ollama running in the background within an Cardinal batch job.
+server and vLLM running in the background within an Cardinal batch job.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ Again, you do not need to restart the app as it isn't a Passenger app.
 
 ## Contributing
 
-1. Fork it ( https://github.com/OSC/bc_osc_jupyter_ollama/fork )
+1. Fork it ( https://github.com/OSC/bc_osc_jupyter_vllm/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
