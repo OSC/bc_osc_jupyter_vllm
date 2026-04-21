@@ -3,13 +3,13 @@ cluster:
   - "cardinal"
 form:
   - auto_accounts
-  - vllm_model
   - mode
   - working_dir
   - bc_num_hours
   - node_type
   - gpus
   - num_cores
+  - vllm_model
   - jupyter_version
   - bc_email_on_started
 attributes:
@@ -20,10 +20,11 @@ attributes:
           '4.1.5', '4.1.5',
         ]
   vllm_model:
-    widget: 'select'
-    options:
-      - [ 'TinyLlama_v1.1', 'TinyLlama/TinyLlama_v1.1' ] 
-      - [ 'Llama-3.2-3B', 'meta-llama/Llama-3.2-3B' ]
+    widget: "path_selector"
+    label: "Vllm Model"
+    show_hidden: true
+    show_files: false
+    help: "Select which model to load. It will be in $HF_HOME/hub: Select a directory containing a model, where the directory's name is of the format 'models--meta-llama--Llama-3.2-3B'. Invalid directory choice will result in an error, and you will not be able to submit the job"
   mode:
     widget: "radio"
     value: "1"
