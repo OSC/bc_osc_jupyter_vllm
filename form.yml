@@ -24,7 +24,7 @@ attributes:
     label: "Vllm Model"
     show_hidden: true
     show_files: false
-    help: "Select which model to load. It will be in $HF_HOME/hub: Select a directory containing a model, where the directory's name is of the format 'models--meta-llama--Llama-3.2-3B'. Invalid directory choice will result in an error, and you will not be able to submit the job"
+    help: "Select which model to load. It will be in $HF_HOME/hub: Select a directory containing a model, where the directory's name is of the format 'models--meta-llama--Llama-3.2-3B'. Invalid directory choice will result in an error, and you will not be able to submit the job. The public $HF_HOME directory is /fs/ess/pub_data/vllm/.cache/huggingface"
   mode:
     widget: "radio"
     value: "1"
