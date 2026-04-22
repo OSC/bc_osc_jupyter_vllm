@@ -17,9 +17,10 @@ cd "${NOTEBOOK_ROOT}"
 module load project/ondemand app_jupyter/<%= context.jupyter_version %>
 LMOD_EXACT_MATCH=no module load vllm
 
-VLLM_MODEL=<%=
+<% if context.vllm_public_select == "private" %>
+VLLM_MODEL_PATH=<%=
     # /fs/ess/pub_data/vllm/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B
-    split = context.vllm_model.split("/")
+    split = context.vllm_model_path.split("/")
 
     # models--meta-llama--Llama-3.2-3B
     tail = split[-1]
@@ -32,7 +33,7 @@ VLLM_MODEL=<%=
 %>
 export HF_HOME=<%=
     # /fs/ess/pub_data/vllm/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B
-    split = context.vllm_model.split("/")
+    split = context.vllm_model_path.split("/")
 
     # /fs/ess/pub_data/vllm/.cache/huggingface/hub
     head =  split[0..-2]
@@ -44,10 +45,17 @@ export HF_HOME=<%=
     hf_home
 %>
 
-echo $VLLM_MODEL
+echo $VLLM_MODEL_PATH
 echo $HF_HOME
 
-source vllm_start_helper "$VLLM_MODEL"
+source vllm_start_helper "$VLLM_MODEL_PATH"
+
+<% else %>
+    
+source vllm_start_helper <%= context.vllm_model_select %>
+
+<% end %>
+
 
 module list
 export JUPYTER_PATH="${PWD}/share/jupyter:${OSC_LLM_API_PATH}"
