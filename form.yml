@@ -39,8 +39,25 @@ attributes:
     label: "Shared Vllm Model"
     hide_by_default: true
     options:
-      - [ 'TinyLlama_v1.1', 'TinyLlama/TinyLlama_v1.1' ] 
-      - [ 'Llama-3.2-3B', 'meta-llama/Llama-3.2-3B' ]
+      #- [ 'deepseek-ai/DeepSeek-R1-Distill-Qwen-32B', 'deepseek-ai/DeepSeek-R1-Distill-Qwen-32B' ] #not enough VRAM on single H100, also doesn't run with two? 
+      - [ 'google/gemma-3-27b-it', 'google/gemma-3-27b-it' ] #runs on an H100
+      - [ 'meta-llama/Llama-3.2-3B', 'meta-llama/Llama-3.2-3B' ] #runs on an H100
+      - [ 'microsoft/phi-4', 'microsoft/phi-4' ] #runs on an H100
+      - [ 'mistralai/Mistral-Small-3.1-24B-Instruct-2503', 'mistralai/Mistral-Small-3.1-24B-Instruct-2503' ] #runs on an H100
+      #- [ 'mistralai/Voxtral-Mini-4B-Realtime-2602', 'mistralai/Voxtral-Mini-4B-Realtime-2602' ] #unsupported architecture as of vllm 0.14.1
+      - [ 'openai/gpt-oss-20b', 'openai/gpt-oss-20b' ] #runs on an H100
+      - [ 'openai/whisper-large-v3', 'openai/whisper-large-v3' ] #seems to run, audio api untested
+      - [ 'openai/whisper-small', 'openai/whisper-small' ] #untested
+      - [ 'Qwen/Qwen2.5-0.5B-Instruct', 'Qwen/Qwen2.5-0.5B-Instruct' ]
+      - [ 'Qwen/Qwen2.5-Omni-3B', 'Qwen/Qwen2.5-Omni-3B' ]
+      - [ 'Qwen/Qwen2.5-Omni-7B-AWQ', 'Qwen/Qwen2.5-Omni-7B-AWQ' ]
+      - [ 'Qwen/Qwen3-0.6B', 'Qwen/Qwen3-0.6B' ]
+      - [ 'Qwen/Qwen3-30B-A3B', 'Qwen/Qwen3-30B-A3B' ]
+      - [ 'Qwen/Qwen3-8B', 'Qwen/Qwen3-8B' ]
+      - [ 'Qwen/Qwen3-Embedding-8B', 'Qwen/Qwen3-Embedding-8B' ]
+      - [ 'Qwen/Qwen3-Omni-30B-A3B-Instruct', 'Qwen/Qwen3-Omni-30B-A3B-Instruct' ] #runs on an H100
+      - [ 'Qwen/Qwen3.5-9B', 'Qwen/Qwen3.5-9B' ]
+      - [ 'TinyLlama/TinyLlama_v1.1', 'TinyLlama/TinyLlama_v1.1' ] 
   mode:
     widget: "radio"
     value: "1"
