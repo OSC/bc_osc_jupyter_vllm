@@ -64,8 +64,8 @@ source vllm_start_helper <%= context.vllm_model_select %>
 
 
 module list
-export JUPYTER_PATH="${PWD}/share/jupyter:${OSC_LLM_API_PATH}"
-
+export JUPYTER_PATH="${PWD}/share/jupyter:${OSC_LLM_API_PATH}:${OSC_JUPYTER_PATH}"
+echo "${JUPYTER_PATH}"
 echo "TTT - $(date)"
 
 # List available kernels for debugging purposes
