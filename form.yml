@@ -2,7 +2,6 @@
 cluster:
   - "ascend"
   - "cardinal"
-  - "pitzer"
 form:
   - auto_accounts
   - auto_modules_app_jupyter
