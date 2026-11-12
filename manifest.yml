@@ -4,9 +4,10 @@ category: Interactive Apps
 subcategory: Servers
 role: batch_connect
 description: |
-  Launch a [Jupyter] server with [Python] on [Cardinal] with vLLM. 
+  Launch a [Jupyter] server with [Python] on [Cardinal] or [Ascend] with vLLM. 
 
   [Jupyter]: https://jupyter.org/
   [Python]: https://www.python.org/
   [Cardinal]: https://www.osc.edu/resources/technical_support/supercomputers/cardinal
   [Ascend]: https://www.osc.edu/resources/technical_support/supercomputers/ascend
+

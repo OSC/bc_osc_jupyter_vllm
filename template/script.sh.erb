@@ -10,11 +10,17 @@ echo "TTT - $(date)"
 # Clean the environment
 module purge
 
+
+# Required modules
+<%- unless context.auto_modules_cuda.empty? || context.auto_modules_cuda == 'none' -%>
+module load <%= context.auto_modules_cuda %>
+<%- end -%>
+
 # Set working directory to notebook root directory
 cd "${NOTEBOOK_ROOT}"
 
 # Setup Jupyter environment
-module load project/ondemand app_jupyter/<%= context.jupyter_version %>
+module load project/ondemand  <%= context.auto_modules_app_jupyter %>
 LMOD_EXACT_MATCH=no module load vllm
 
 <% if context.vllm_public_select == "private" %>
@@ -58,8 +64,8 @@ source vllm_start_helper <%= context.vllm_model_select %>
 
 
 module list
-export JUPYTER_PATH="${PWD}/share/jupyter:${OSC_LLM_API_PATH}"
-
+export JUPYTER_PATH="${PWD}/share/jupyter:${OSC_LLM_API_PATH}:${OSC_JUPYTER_PATH}"
+echo "${JUPYTER_PATH}"
 echo "TTT - $(date)"
 
 # List available kernels for debugging purposes
